@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5a9d8">
+  <title>pink passport — pinoy trip planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="desktop">
+      <div class="topbar">
+        <div class="topbar-left"><span>✿ PINK PASSPORT TRAVEL DESK</span><span>✦ MADE FOR YOUR NEXT “AHA!” MOMENT</span></div>
+        <div class="topbar-right"><span><i class="status-dot"></i> ALL SYSTEMS SUNNY</span><span id="topDate">MANILA, PH</span></div>
+      </div>
+      <header class="brandbar">
+        <div class="brand">
+          <div class="brand-mark">✈</div>
+          <div><p class="brand-name">pink <span>passport</span></p><p class="brand-tag">your little trip-planning corner</p></div>
+        </div>
+        <div class="header-tools">
+          <button type="button" class="date-pill" id="locationInfo" aria-label="Philippines travel info">📍 <span>Philippines</span> <span style="color:#a397aa">⌄</span></button>
+          <button type="button" class="profile-chip" id="profileInfo" aria-label="Edit your profile"><span class="avatar" id="profileAvatar">🌺</span><span id="profileGreeting">Hi, Mia!</span></button>
+        </div>
+      </header>
+      <div class="layout">
+        <aside class="sidebar">
+          <p class="nav-label">your workspace</p>
+          <nav class="nav-list" aria-label="Main navigation">
+            <button class="nav-button active" data-view="dashboard"><span class="nav-icon">⌂</span>Dashboard</button>
+            <button class="nav-button" data-view="planner"><span class="nav-icon">＋</span>Trip planner</button>
+            <button class="nav-button" data-view="destinations"><span class="nav-icon">♡</span>Destinations</button>
+            <button class="nav-button" data-view="itinerary"><span class="nav-icon">▤</span>Itinerary</button>
+            <button class="nav-button" data-view="budget"><span class="nav-icon">₱</span>Budget tracker</button>
+            <button class="nav-button" data-view="packing"><span class="nav-icon">☑</span>Packing list <span class="nav-count" id="packingCount">0/8</span></button>
+          </nav>
+          <div class="sidebar-spacer"></div>
+          <div class="mini-trip">
+            <div class="mini-trip-top"><span>up next · 12 days</span><span>✦</span></div>
+            <h3 id="sidebarTripName">El Nido escape</h3>
+            <p id="sidebarTripDates">Palawan · Jun 20 – 24</p>
+            <div class="progress"><span></span></div>
+          </div>
+          <p class="sidebar-note">made with ♡ in the philippines</p>
+        </aside>
+        <main>
+          <section class="view active" id="view-dashboard">
+            <div class="welcome-row">
+              <div><p class="eyebrow" id="welcomeDate">MANILA, PH</p><h1>Hey, <span id="dashboardProfileName">Mia</span>! <span aria-hidden="true">✦</span></h1><p class="welcome-copy">Your next little adventure is closer than you think.</p></div>
+              <button class="primary-btn" data-go="planner">＋ Plan a trip</button>
+            </div>
+            <div class="hero">
+              <div class="hero-copy">
+                <p class="hero-kicker" id="heroKicker">✿ YOUR NEXT ESCAPE IS CALLING</p>
+                <h2><span id="heroTheme">Island days</span><br><span id="heroDestination">El Nido!</span></h2>
+                <p id="heroDescription">A little time for salty air, secret lagoons, and doing absolutely nothing in a hurry.</p>
+                <button class="primary-btn" data-go="itinerary">Open my itinerary <span>↗</span></button>
+              </div>
+              <div class="hero-art" aria-hidden="true"><div class="sun"></div><span class="sun-caption">PHILIPPINES</span><div class="island"></div><span class="palm">🌴</span><span class="float-sticker">OUT OF OFFICE ✧</span></div>
+            </div>
+            <div class="stats-grid">
+              <button type="button" class="stat-card" data-go="itinerary"><div class="stat-icon">🧳</div><div><div class="stat-label">UPCOMING TRIP</div><div class="stat-value" id="statDays">12 <small style="font-size:10px">days</small></div></div></button>
+              <button type="button" class="stat-card" data-go="destinations"><div class="stat-icon">📍</div><div><div class="stat-label">PLACES ON YOUR LIST</div><div class="stat-value" id="statSavedPlaces">01</div></div></button>
+              <button type="button" class="stat-card" data-go="budget"><div class="stat-icon">₱</div><div><div class="stat-label">BUDGET LEFT</div><div class="stat-value" id="statBudget">₱8,450</div></div></button>
+              <button type="button" class="stat-card" data-go="packing"><div class="stat-icon">☑</div><div><div class="stat-label">BAG IS READY</div><div class="stat-value" id="statPacking">0%</div></div></button>
+            </div>
+            <div class="two-column">
+              <div class="window">
+                <div class="window-bar"><span>✿ MY NEXT ADVENTURE</span><span class="window-controls"><i></i><i></i><i></i></span></div>
+                <div class="window-content"><div class="trip-preview">
+                  <div class="trip-photo">🏝️</div>
+                      <div><h3 id="dashboardTripName">El Nido, Palawan</h3><p id="dashboardTripDescription">A little island-hopping moment with my favorite people.</p><div class="trip-meta"><span id="dashboardTripDates">JUN 20 – 24, 2026</span><span>·</span><span id="dashboardTripDuration">5 DAYS</span></div></div>
+                  <button type="button" class="secondary-btn" data-go="itinerary">View itinerary ↗</button>
+                </div></div>
+              </div>
+              <div class="window">
+                <div class="window-bar"><span>✉ LITTLE PLANS FOR TODAY</span><span class="window-controls"><i></i><i></i><i></i></span></div>
+                <div class="window-content"><div class="agenda-list">
+                  <button type="button" class="agenda-item agenda-link" data-go="itinerary"><div class="agenda-time">09:00 AM</div><div><strong><i class="agenda-dot"></i>Book island tour</strong><span>Compare Tour A & Tour C</span></div></button>
+                  <button type="button" class="agenda-item agenda-link" data-go="itinerary"><div class="agenda-time">01:30 PM</div><div><strong><i class="agenda-dot" style="background:#b89aee"></i>Check ferry schedule</strong><span>Coron → El Nido, if time allows</span></div></button>
+                  <button type="button" class="agenda-item agenda-link" data-go="itinerary"><div class="agenda-time">06:00 PM</div><div><strong><i class="agenda-dot" style="background:#79cba0"></i>Text the group chat</strong><span>Send the cute itinerary ✨</span></div></button>
+                </div></div>
+              </div>
+            </div>
+            <div class="section-heading"><div><h2 id="dashboardWishlistTitle">On my Philippines wishlist</h2><p class="sub" id="dashboardWishlistCopy">A few places that have your name on them.</p></div><button class="link-button" data-go="destinations">See all places ↗</button></div>
+            <div class="destination-grid" id="dashboardDestinations"></div>
+          </section>
+
+          <section class="view" id="view-planner">
+            <div class="welcome-row"><div><p class="eyebrow">START DREAMING ✧</p><h1 id="plannerTitle">Plan a new trip</h1><p class="welcome-copy">Pick a place, choose your dates, let the fun begin.</p></div></div>
+            <div class="window">
+              <div class="window-bar"><span>✿ NEW ADVENTURE.SETUP</span><span class="window-controls"><i></i><i></i><i></i></span></div>
+              <div class="window-content" style="padding:20px">
+                <form id="tripForm">
+                  <div class="trip-form">
+                    <div class="field full"><label for="tripName">WHAT ARE WE CALLING THIS ADVENTURE?</label><input id="tripName" name="name" placeholder="Choose a destination for an idea, or type your own" required></div>
+                    <div class="field"><label for="tripDestination">WHERE TO?</label><select id="tripDestination" name="destination" required><option value="">Choose a destination</option></select></div>
+                    <div class="field full" id="customDestinationField" hidden><label for="tripDestinationCustom">YOUR DESTINATION</label><input id="tripDestinationCustom" name="destinationCustom" maxlength="100" placeholder="Type a city, province, beach, or place"></div>
+                    <div class="field"><label for="tripBudget">TOTAL BUDGET (₱)</label><input id="tripBudget" name="budget" type="number" min="1" placeholder="15000" required></div>
+                    <div class="field"><label for="tripStart">START DATE</label><input id="tripStart" name="start" type="date" required></div>
+                    <div class="field"><label for="tripEnd">END DATE</label><input id="tripEnd" name="end" type="date" required></div>
+                    <div class="field full"><label for="tripNotes">THE VIBE / LITTLE NOTES</label><input id="tripNotes" name="notes" placeholder="Choose a destination to get a suggested note"></div>
+                  </div>
+                  <div class="form-actions"><button type="button" class="secondary-btn" data-go="dashboard">Maybe later</button><button type="submit" class="primary-btn" id="tripSubmitBtn">Save my trip ✦</button></div>
+                </form>
+              </div>
+            </div>
+            <div class="window" style="margin-top:16px"><div class="window-bar"><span>♡ GOOD TO KNOW · PH TRAVEL NOTES</span><span class="window-controls"><i></i><i></i><i></i></span></div><div class="window-content" style="color:var(--muted);font-size:11px;line-height:1.7">Planning a local trip? Check weather and ferry schedules before you go. Keep a little extra for terminal fees, tricycle rides, and the pasalubong you definitely will buy. ✿</div></div>
+          </section>
+
+          <section class="view" id="view-destinations">
+            <div class="welcome-row"><div><p class="eyebrow">7,641 ISLANDS, ONE WISHLIST</p><h1>Find your happy place</h1><p class="welcome-copy">Save a spot for that someday trip—or the next long weekend.</p></div><button class="secondary-btn" id="savedToggle">♡ Saved only</button></div>
+            <div class="filter-row" id="destinationFilters"><button class="filter-chip active" data-filter="All">All places</button><button class="filter-chip" data-filter="Beach">🏝 Beach</button><button class="filter-chip" data-filter="Nature">🌿 Nature</button><button class="filter-chip" data-filter="City">🌆 City</button><button class="filter-chip" data-filter="Food">🍜 Food</button><button class="filter-chip" data-filter="Church">🏛 Churches</button></div>
+            <div class="destination-grid" id="allDestinations"></div>
+          </section>
+
+          <section class="view" id="view-itinerary">
+            <div class="welcome-row"><div><p class="eyebrow">THE FUN PART ✧</p><h1 id="itineraryTitle">El Nido, day by day</h1><p class="welcome-copy">A loose plan, plenty of room for spontaneous merienda.</p></div><div class="header-actions"><button class="secondary-btn" id="downloadTripBtn">⇩ Download trip file</button><button class="primary-btn" id="addPlanBtn">＋ Add a plan</button></div></div>
+            <div class="window">
+              <div class="window-bar"><span>▤ YOUR LITTLE DAY-BY-DAY</span><span class="window-controls"><i></i><i></i><i></i></span></div>
+              <div class="window-content">
+                <div class="itinerary-toolbar"><div class="day-tabs" id="dayTabs"></div><span class="status-tag">LOCAL TIME · PHT</span></div>
+                <div class="itinerary-list" id="itineraryList"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="view" id="view-budget">
+            <div class="welcome-row"><div><p class="eyebrow">MONEY, BUT MAKE IT CUTE</p><h1>Budget tracker</h1><p class="welcome-copy">A little ₱ planning now = more carefree island days later.</p></div><div class="header-actions"><button class="secondary-btn" id="editTripBtn">✎ Edit trip & budget</button><button class="primary-btn" id="addExpenseBtn">＋ Add expense</button></div></div>
+            <div class="budget-layout">
+              <div class="budget-total"><p id="budgetTripLabel">TRIP BUDGET · EL NIDO ESCAPE</p><h2 id="budgetSummary">₱18,000 <span>/ ₱26,450</span></h2><button type="button" class="edit-spent-link" id="editSpentBtn">✎ Change total spent</button><div class="budget-meter"><span id="budgetMeter"></span></div><small><span id="budgetSpentLabel">₱18,000 spent</span><span id="budgetLeftLabel">₱8,450 left</span></small></div>
+              <div class="window"><div class="window-bar"><span>✿ WHERE IT'S GOING · CLICK A CATEGORY</span><span class="window-controls"><i></i><i></i><i></i></span></div><div class="window-content"><div class="budget-breakdown" id="budgetBreakdown"></div></div></div>
+            </div>
+            <div class="section-heading"><div><h2>Recent little spends</h2><p class="sub">Every peso accounted for (mostly).</p></div></div>
+            <div class="window" id="expenseWindow"><div class="window-bar"><span>₱ EXPENSE LOG.TXT</span><span class="window-controls"><i></i><i></i><i></i></span></div><div class="window-content" style="padding:7px 14px">
+              <div class="expense-filter-bar"><span id="expenseFilterLabel">Showing all expenses</span><button type="button" class="link-button" id="clearExpenseFilter" hidden>Show all</button></div>
+              <div class="expense-table-wrap"><table class="expense-table"><thead><tr><th>What</th><th>Category</th><th>Date</th><th>Amount</th><th>Actions</th></tr></thead><tbody id="expenseRows"></tbody></table></div>
+            </div></div>
+          </section>
+
+          <section class="view" id="view-packing">
+            <div class="welcome-row"><div><p class="eyebrow">DON'T FORGET THE SPF ✿</p><h1>Pack your happy things</h1><p class="welcome-copy">A lighter bag, a happier you. Tap to check things off.</p></div><button class="secondary-btn" id="resetPacking">↻ Start fresh</button></div>
+            <div class="window"><div class="window-bar"><span>☑ <span id="packingTripName">EL NIDO ESCAPE</span> · PACKING LIST</span><span class="window-controls"><i></i><i></i><i></i></span></div><div class="window-content"><div class="packing-progress"><div class="progress"><span id="packingBar" style="width:0%"></span></div><strong id="packingProgressText">0 / 0</strong></div><div class="packing-grid" id="packingGrid"></div><div class="packing-add-panel"><div><strong>Add a packing item anytime</strong><p>You can pick a suggestion or type your own item. Add things before, during, or after your trip.</p></div><form class="packing-add" id="packingForm"><label class="sr-only" for="packingSuggestion">Choose a suggested packing item</label><select class="search-input" id="packingSuggestion" aria-label="Choose a suggested packing item"><option value="">Choose an item…</option><optgroup label="Travel basics"><option>Wallet + cash</option><option>Valid ID</option><option>Booking confirmations</option><option>Phone charger</option><option>Power bank</option><option>Reusable water bottle</option></optgroup><optgroup label="Clothes"><option>Extra clothes</option><option>Sleepwear</option><option>Underwear + socks</option><option>Comfortable walking shoes</option><option>Light rain jacket</option></optgroup><optgroup label="Toiletries & health"><option>Toiletries</option><option>Personal medicines</option><option>Sunscreen</option><option>Insect repellent</option><option>Hand sanitizer</option></optgroup><optgroup label="Beach day"><option>Swimsuit</option><option>Quick-dry towel</option><option>Dry bag</option><option>Waterproof phone pouch</option><option>Beach slippers</option></optgroup></select><label class="sr-only" for="packingInput">Or type a custom packing item</label><input class="search-input" id="packingInput" placeholder="Or type your own item…" aria-label="Or type a custom packing item"><button class="primary-btn" type="submit">＋ Add item</button></form></div></div></div>
+            <div class="window" style="margin-top:15px"><div class="window-bar"><span>✧ LITTLE REMINDER</span><span class="window-controls"><i></i><i></i><i></i></span></div><div class="window-content" style="color:var(--muted);font-size:11px">Bring a reusable water bottle, a dry bag for boat days, and your best “is this seat taken?” smile. 🌸</div></div>
+          </section>
+        </main>
+      </div>
+      <div class="checker"></div>
+      <footer><span>© 2026 PINK PASSPORT · MADE WITH ♡</span><span>KEEP IT LOCAL · KEEP IT MAGICAL ✿</span><span>v1.0.0</span></footer>
+    </div>
+  </div>
+  <dialog class="entry-dialog" id="entryDialog" aria-labelledby="entryDialogTitle">
+    <form id="entryDialogForm">
+      <div class="window-bar"><span id="entryDialogBar">✿ ADD A LITTLE PLAN</span><button type="button" id="closeEntryDialog" aria-label="Close dialog" style="border:0;background:transparent;cursor:pointer;color:inherit">✕</button></div>
+      <div class="window-content" style="padding:18px">
+        <h2 id="entryDialogTitle"></h2>
+        <p class="modal-copy" id="entryDialogCopy"></p>
+        <div class="trip-form" id="entryDialogFields"></div>
+        <div class="form-actions"><button type="button" class="secondary-btn" id="cancelEntryDialog">Cancel</button><button type="submit" class="primary-btn" id="saveEntryDialog">Save ✦</button></div>
+      </div>
+    </form>
+  </dialog>
+  <dialog class="entry-dialog" id="profileDialog" aria-labelledby="profileDialogTitle">
+    <form id="profileForm">
+      <div class="window-bar"><span>✿ YOUR TRAVEL PROFILE</span><button type="button" id="closeProfileDialog" aria-label="Close profile" style="border:0;background:transparent;cursor:pointer;color:inherit">✕</button></div>
+      <div class="window-content" style="padding:18px">
+        <h2 id="profileDialogTitle">Make it yours</h2>
+        <p class="modal-copy">Your profile is saved only in this browser on this device.</p>
+        <div class="trip-form">
+          <div class="field"><label for="profileName">YOUR NAME</label><input id="profileName" name="name" maxlength="40" required></div>
+          <div class="field"><label for="profileAvatarChoice">PROFILE ICON</label><select id="profileAvatarChoice" name="avatar"><option value="🌺">🌺 Flower</option><option value="🧳">🧳 Suitcase</option><option value="🌴">🌴 Palm tree</option><option value="✈️">✈️ Plane</option><option value="🐚">🐚 Seashell</option></select></div>
+          <div class="field full"><label for="profileHome">HOME CITY / AREA</label><input id="profileHome" name="home" maxlength="60" placeholder="e.g. Manila, Philippines"></div>
+        </div>
+        <div class="form-actions"><button type="button" class="secondary-btn" id="cancelProfileDialog">Cancel</button><button type="submit" class="primary-btn">Save profile ✦</button></div>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
